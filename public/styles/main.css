@@ -1,0 +1,49 @@
+html, body, #container, #content{
+	position: absolute;
+	margin: 0 0 0 0;
+	width: 100%;
+	height: 100%;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: 100;
+}
+
+.full_width_container {
+	width: 100%;
+}
+
+.half_width_container {
+	width: 50%;
+	float: left;
+}
+
+.height_container_100 {
+	height: 100px;
+}
+
+.height_container_200 {
+	height: 200px;
+}
+
+.height_container_300 {
+	height: 300px;
+}
+
+.height_container_400 {
+	height: 400px;
+}
+
+.height_container_500 {
+	height: 500px;
+}
+
+#hook {
+	background-image: url('../imgs/pink_tag.png');
+	background-size: 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#team {
+	background-color: blue;
+	clear: both;
+}
