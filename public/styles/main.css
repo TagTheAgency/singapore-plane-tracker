@@ -7,6 +7,20 @@ html, body, #container, #content{
 	font-weight: 100;
 }
 
+h1 {
+	font-family: 'Helvetica Neue';
+	font-weight: 500;
+	font-style: italic;
+	font-size: 40px;
+	display: inline-block;
+}
+
+.center_horizontal {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 .full_width_container {
 	width: 100%;
 }
@@ -43,7 +57,42 @@ html, body, #container, #content{
 	background-repeat: no-repeat;
 }
 
+#hook_subtitle {
+	text-align: center;
+	font-size: 30px;
+	background-color: rgba(240, 222, 15, 0.7);
+	line-height: 100px;
+	color: black;
+}
+
+#tag_youre_it {
+}
+
+#tag_youre_it h1 {
+	position: relative;
+	margin: 80px 0 0 20px;
+	-webkit-transform: rotate(-35deg);
+	-moz-transform: rotate(-35deg);
+}
+
+#tag_youre_it p {
+	text-align: center;
+	width: 400px;
+	font-size: 20px;
+}
+
 #team {
 	background-color: blue;
 	clear: both;
+	background-color: rgba(240, 222, 15, 0.7);
+}
+
+#lets_play {
+	background-image: url('../imgs/right_arrow.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#lets_play #title {
+	
 }
