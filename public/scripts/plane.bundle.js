@@ -6,7 +6,7 @@ webpackJsonp([0],[
 
 	var angular = __webpack_require__(1)
 
-	angular.module('tagApp', []);
+	angular.module('singaporeAirlinesApp', []);
 
 	__webpack_require__(3)
 	__webpack_require__(4)
@@ -22,7 +22,7 @@ webpackJsonp([0],[
 	
 	var angular = __webpack_require__(1)
 
-	angular.module('tagApp')
+	angular.module('singaporeAirlinesApp')
 	.controller('mainCtrl', function($scope, $location, dataService){        
 	  
 	})
@@ -32,8 +32,8 @@ webpackJsonp([0],[
 /***/ function(module, exports) {
 
 	
-	angular.module('tagApp')
-	.service('dataService', function($http, $q) {
+	angular.module('singaporeAirlinesApp')
+	.service('dataService', function($http) {
 	 
 	});
 
@@ -42,7 +42,7 @@ webpackJsonp([0],[
 /* 5 */
 /***/ function(module, exports) {
 
-	angular.module('tagApp')
+	angular.module('singaporeAirlinesApp')
 	.directive('homepage', function(){
 	  return {
 	    templateUrl: 'templates/homepage.html',

@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         path: __dirname + '/public/scripts',
-        filename: 'tag.bundle.js'
+        filename: 'plane.bundle.js'
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"vendor.bundle.js")

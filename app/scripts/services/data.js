@@ -1,5 +1,5 @@
 
-angular.module('tagApp')
-.service('dataService', function($http, $q) {
+angular.module('singaporeAirlinesApp')
+.service('dataService', function($http) {
  
 });

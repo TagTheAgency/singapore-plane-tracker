@@ -2,7 +2,7 @@
 
 var angular = require('angular')
 
-angular.module('tagApp', []);
+angular.module('singaporeAirlinesApp', []);
 
 require('./scripts/controllers/main.js')
 require('./scripts/services/data.js')
