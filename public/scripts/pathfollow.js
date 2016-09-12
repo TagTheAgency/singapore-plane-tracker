@@ -13,13 +13,18 @@ function ready(error, xml) {
   var path = svg.select("path#plane-path"),
   startPoint = pathStartPoint(path);
 
-  var marker = svg.append("circle");
-  marker.attr("r", 7)
-    .attr("transform", "translate(" + startPoint + ")");
+  var marker = svg.append("svg:image")
+    .attr("xlink:href", "../imgs/plane.png")
+    .attr("width", 50)
+    .attr("height", 50)
+    .attr("x", -30)
+    .attr("y", -30)
+
+  marker.attr("r",   7)
+    .attr("transform", "translate(" + startPoint + ")")
 
   transition();
 
-  //Get path start point for placing marker
   function pathStartPoint(path) {
     var d = path.attr("d"),
     dsplitted = d.split(" ");

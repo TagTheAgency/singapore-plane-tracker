@@ -11,6 +11,7 @@ webpackJsonp([0],[
 	__webpack_require__(3)
 	__webpack_require__(4)
 	__webpack_require__(5)
+	__webpack_require__(6)
 
 
 /***/ },
@@ -46,6 +47,18 @@ webpackJsonp([0],[
 	.directive('homepage', function(){
 	  return {
 	    templateUrl: 'templates/homepage.html',
+	    controller: 'mainCtrl'
+	  }
+	});
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	angular.module('singaporeAirlinesApp')
+	.directive('map', function(){
+	  return {
+	    templateUrl: 'templates/map.html',
 	    controller: 'mainCtrl'
 	  }
 	});
