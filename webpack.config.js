@@ -16,4 +16,22 @@ module.exports = {
     ]
 };
 
-
+module.exports = {
+    context: __dirname + '/public/scripts',
+    entry: ["./map.js", "./flight_tracker.js"],
+    output: {
+        path: __dirname + '/public/scripts',
+        filename: 'scripts.bundle.js'
+    },
+    module: {
+        loaders: [
+          { test: /\.json$/, loader: 'json-loader' }
+        ]
+      },
+    node: {
+        console: 'empty',
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty'
+    }
+}

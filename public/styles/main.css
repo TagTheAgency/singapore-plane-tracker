@@ -5,8 +5,10 @@ html, body, #container, #content{
 	height: 100%;
 	font-family: 'BakerSignet';
 	font-weight: 100;
-	background-image: url(../imgs/coombs-us-mail.jpg);
-	background-size: cover;
+	background-image: url(../imgs/bg-illustrated.png);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 @font-face {
@@ -17,17 +19,17 @@ html, body, #container, #content{
 #buttons_wrapper {
 	position: absolute;
 	left: 50%;
-	bottom: 100px;
-	width: 600px;
+	bottom: 150px;
+	width: 640px;
 	height: 60px;
 	transform: translateX(-50%);
 }
 
 #buttons_wrapper div {
-	font-size: 1.2vw;
+	font-size: 20px;
 	color: #0077CC;
 	height: 100%;
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(249, 157, 28, 0.4);
 	width: 40%;
 	float: left;
 	text-align: center;
@@ -41,7 +43,7 @@ html, body, #container, #content{
 
 #wttw-header {
 	color: #0077CC;
-	font-size: 2vw;
+	font-size: 35px;
 	border-radius: 10px;
 	background-color: rgba(0,0,0,0.2);
 	width: 400px;
@@ -83,9 +85,9 @@ html, body, #container, #content{
 	margin: 10px 10px 0 0 ;
 	position: absolute;
 	right: 100px;
-	bottom: 100px;
-	height: 100px;
-	width: 200px;
+	bottom: 25px;
+	height: 70px;
+	width: 170px;
 	background-image: url(../imgs/wa-logo.png);
 	background-size: cover;
 	background-position: center;
