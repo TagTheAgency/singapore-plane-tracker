@@ -33,7 +33,7 @@ $(document).ready(function() {
       console.log(1)
     }
 
-    setInterval(function(){getFlightUpdate()}, 10000);
+    setInterval(function(){getFlightUpdate()}, 60000);
 
     function plotCoords(coords) {
       if(flightPath !== undefined) {
