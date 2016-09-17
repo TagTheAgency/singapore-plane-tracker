@@ -1,10 +1,13 @@
-var _index=0;
-$('#move_noAnimation').click(move_noAnimation);
-$('#move_tweenMax').click(move_tweenMax);
+$(document).ready(function() {
 
-function move_noAnimation() {  
-  if (isMapReady) marker.setPosition(lineCoordinates[nextIndex()]);
-}
+var _index = 0;
+var isMapReady = false;
+
+console.log('Twst')
+
+$('body').click(console.log('please'))
+
+// document.getElementById("tracker-button").click(console.log('please'))
 
 var proxyCoordinates = {
   x:1.3554,
@@ -16,21 +19,16 @@ function applyCoordinates(){
 }
 
 function move_tweenMax() {
- console.log("move")
+  console.log('test')
  if (isMapReady)
     TweenMax.to(
-      proxyCoordinates,2,
+      proxyCoordinates,10,
       {
         x:-41.2865,
         y:174.7762,
         onUpdate:applyCoordinates
       }
-    );
-  
-}
-function nextIndex() {
-    if (_index==0) _index=1;else _index=0;
-    return _index;
+    );  
 }
 
 function initMap() {
@@ -38,6 +36,7 @@ function initMap() {
     new google.maps.LatLng(1.3554, 103.8677),
     new google.maps.LatLng(1.3554, 103.8677)
   ]
+
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -20, lng: 140},
     zoom: 3,
@@ -49,21 +48,20 @@ function initMap() {
     disableDoubleClickZoom: true,
     mapTypeId: 'satellite'
   });
-  var isMapReady=false;
+
   // var mapOptions = {
   //   center: new google.maps.LatLng(1.3554, 103.8677),
   //   zoom:11,mapTypeId:google.maps.MapTypeId.ROADMAP,
   //   disableDefaultUI: true
   // };
-  // var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   var marker = new google.maps.Marker();
-  //
+
   google.maps.event.addListenerOnce(map, 'idle', mapReady);
   function mapReady() {
       marker.setMap(map);
       marker.setPosition(lineCoordinates[0]);
-      isMapReady=true;
+      isMapReady = true;
   }
 }
 
-// INITIALIZATION OF GOOGLE MAP & CO
+})
