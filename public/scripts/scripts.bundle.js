@@ -83,7 +83,7 @@
 	$(document).ready(function() {
 	    $(document).on('click', '#tracker-button', function() {
 	    var coords = []
-	    setInterval(function(){  
+	    // setInterval(function(){  
 	      $.ajax({
 	          type: 'GET',
 	          url: fxml_url + 'GetLastTrack',
@@ -101,7 +101,7 @@
 	          xhrFields: { withCredentials: true }
 	          });
 	      });
-	    }, 8000);
+	    // }, 8000);
 
 	    function plotCoords(coords) {
 	      var flightPath = new google.maps.Polyline({

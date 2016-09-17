@@ -20,12 +20,26 @@ webpackJsonp([0],[
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
 	var angular = __webpack_require__(1)
 
 	angular.module('singaporeAirlinesApp')
 	.controller('mainCtrl', function($scope, $location, dataService){        
-	  
+		$scope.trackFlight = function () {
+			dataService.trackFlight(function successCallback(response){
+				$scope.getCoords(response)
+			},
+			function errorCallback(response) {
+				console.log(response)
+			})
+		}
+
+		$scope.getCoords = function(coords) {
+			for (var i = coords.GetLastTrackResult.data.length - 1; i >= 0; i--) {
+			  var flight_update = coords.GetLastTrackResult.data[i]
+			  coords.push({lat: flight_update.latitude, lng: flight_update.longitude})
+			}
+			console.log(coords)
+		} 
 	})
 
 /***/ },
@@ -34,9 +48,26 @@ webpackJsonp([0],[
 
 	
 	angular.module('singaporeAirlinesApp')
+	// .run(function($http) {
+	// 	$http.defaults.headers.common['Authorization'] = 'Basic ' + btoa('iraritchiemeek:b66b5f80cd578cb1318c9e1c5748338e8a24b370');
+	// })
 	.service('dataService', function($http) {
-	 
-	});
+
+		this.trackFlight = function(cb, error) {
+			var fxml_url = 'http://iraritchiemeek:b66b5f80cd578cb1318c9e1c5748338e8a24b370@flightxml.flightaware.com/json/FlightXML2/';
+			$http({
+			    method: 'GET',
+	          	url: fxml_url + 'GetLastTrack',
+	          	headers:  {
+	          	        'Authorization': 'Basic d2VudHdvcnRobWFuOkNoYW5nZV9tZQ==',
+	          	        'Accept': 'application/json;odata=verbose'
+	          	        // "username" : "iraritchiemeek",
+	          	        // 'apiKey': 'b66b5f80cd578cb1318c9e1c5748338e8a24b370'
+	          	},
+	          	data: { 'ident': 'ANZ281'}
+			}).then(cb, error)
+		}
+	})
 
 
 /***/ },
