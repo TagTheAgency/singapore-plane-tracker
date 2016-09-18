@@ -1,4 +1,4 @@
-html, body, #container, #content{
+html, body{
 	position: absolute;
 	margin: 0 0 0 0;
 	width: 100%;
@@ -9,6 +9,14 @@ html, body, #container, #content{
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
+}
+
+#container {
+	height: 100%;
+	width: 840px;
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
 }
 
 @font-face {
@@ -42,10 +50,10 @@ html, body, #container, #content{
 }
 
 #wttw-header {
-	color: #0077CC;
+	color: black;
 	font-size: 35px;
 	border-radius: 10px;
-	background-color: rgba(0,0,0,0.2);
+	background-color: #E8B229;
 	width: 400px;
 	height: 60px;
 	line-height: 60px;
@@ -60,7 +68,7 @@ html, body, #container, #content{
 	border-radius: 10px;
 	border: 20px solid rgba(249, 157, 28, 0.4);
 	width: 600px;
-	height: 600px;
+	height: 60%;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);

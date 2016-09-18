@@ -23,6 +23,7 @@ $(document).ready(function() {
               var flight_update = response.GetLastTrackResult.data[i]
               coords.push({lat: flight_update.latitude, lng: flight_update.longitude})
             }
+            console.log(response)
             plotCoords(coords)
           },
           error: function(data, text) { alert('Failed to fetch flight: ' + data); },
@@ -43,6 +44,7 @@ $(document).ready(function() {
             console.log(i)
             console.log(coords[i -1])
             path.push(new google.maps.LatLng(coords[i-1].lat, coords[i-1].lng))
+            flightPath.setMap(map);
           }
         }
         flightPath.setPath(path)
