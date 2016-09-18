@@ -14,9 +14,27 @@
 </head>
 <body ng-app="singaporeAirlinesApp" ng-controller="mainCtrl">
 	<div id="container">
+	<div id="stream">
+		<div class="fb-video"
+		  data-href="https://www.facebook.com/mytvcambodia/videos/10153746016660703/"
+		  data-width="712"
+		  data-allowfullscreen="true"
+		  data-autoplay="true">
+	  </div>
+	</div>
 	<div id="map" ng-show="show_map"></div>
 	<homepage></homepage>
 	</div>
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 	<!-- <div id="plane-animation"></div> -->
 	<script src="../scripts/flight_tracker.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeJVy_wF_jrneV1N3DSD4cBHKEpH1JcGo&callback=initMap" async defer></script>
