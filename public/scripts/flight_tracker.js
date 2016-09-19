@@ -23,42 +23,58 @@ $(document).ready(function() {
               var flight_update = response.GetLastTrackResult.data[i]
               coords.push({lat: flight_update.latitude, lng: flight_update.longitude})
             }
-            console.log(response)
-            plotCoords(coords)
+            if(flightPath !== undefined) {
+               flightPath.setMap(null);
+                flightPath = null
+            }
+            plotCoords2(coords)
           },
           error: function(data, text) { alert('Failed to fetch flight: ' + data); },
           dataType: 'jsonp',
           jsonp: 'jsonp_callback',
           xhrFields: { withCredentials: true }
       });
-      console.log(1)
     }
 
     setInterval(function(){getFlightUpdate()}, 60000);
 
+    function plotCoords2(coords) {
+      // if(flightPath !== undefined) {
+      //   flightPath.setMap(null);
+      //   flightPath = null
+      // }
+
+      flightPath = new google.maps.Polyline({
+          path: coords,
+          geodesic: true,
+          strokeColor: '#FFF',
+          strokeOpacity: 0.8,
+          strokeWeight: 3
+        });
+        flightPath.setMap(map);
+    }
+
     function plotCoords(coords) {
       if(flightPath !== undefined) {
         var path = flightPath.getPath()
-        for (var i = coords.length; i >= 0; i--) {
+        console.log(path)
+        for (var i = coords.length -1; i >= 0; i--) {
           if(i > pathLength) {
             console.log(i)
             console.log(coords[i -1])
             path.push(new google.maps.LatLng(coords[i-1].lat, coords[i-1].lng))
-            flightPath.setMap(map);
+            console.log(path)
           }
+            flightPath.setPath(path)
         }
-        flightPath.setPath(path)
-        console.log(flightPath.getPath().b.length)
-        console.log(coords.length)
       } else {
         flightPath = new google.maps.Polyline({
             path: coords,
             geodesic: true,
             strokeColor: '#FFF',
-            strokeOpacity: 0.7,
+            strokeOpacity: 0.8,
             strokeWeight: 3
           });
-
           flightPath.setMap(map);
       }
       pathLength = coords.length
