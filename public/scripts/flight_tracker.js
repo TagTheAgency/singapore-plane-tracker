@@ -4,7 +4,7 @@ google.load("visualization", "1", {packages:["map"]});
 // data: { 'ident': 'ANZ281', 'departureTime': '1473901980' },
 $(document).ready(function() {
 
-    $(document).on('click', '#tracker-button', function() {
+    $(document).on('click', '#tracker-button, #plane-icon', function() {
 
     var coords = []
     var count = 0
@@ -29,7 +29,7 @@ $(document).ready(function() {
             }
             plotCoords2(coords)
           },
-          error: function(data, text) { alert('Failed to fetch flight: ' + data); },
+          error: function(data, text) { console.log('Failed to fetch flight: ' + data); },
           dataType: 'jsonp',
           jsonp: 'jsonp_callback',
           xhrFields: { withCredentials: true }

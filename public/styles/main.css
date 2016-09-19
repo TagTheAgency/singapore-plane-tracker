@@ -5,14 +5,21 @@ html, body{
 	height: 100%;
 	font-family: 'BakerSignet';
 	font-weight: 100;
+}
+
+.illustratedBg {
 	background-image: url(../imgs/bg-illustrated.png);
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
+}
+
+.plainBg {
+	background-image: url(../imgs/bg-plain.png);
 }
 
 #container {
-	height: 100%;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 1080px;
 	width: 840px;
 	position: absolute;
 	transform: translateX(-50%);
@@ -56,12 +63,27 @@ html, body{
 	background-repeat: no-repeat;
 }
 
+#close {
+
+}
+
 #plane-icon {
 	background-image: url(../imgs/planeicon-yellow.png);
 }
 
 #play-icon {
 	background-image: url(../imgs/streamicon.png);
+}
+
+#join-us {
+	font-size: 25px;
+	height: 200px;
+	width: 400px;
+	text-align: right;
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	margin: 180px 40px 0 0;
 }
 
 #wttw-header {

@@ -12,9 +12,9 @@
 	<script src="../scripts/map.js"></script>
 	<!-- <script src="/scripts/scripts.bundle.js"></script> -->
 </head>
-<body ng-app="singaporeAirlinesApp" ng-controller="mainCtrl">
-	<div id="container">
-	<div ng-show="show_stream" id="stream">
+<body ng-app="singaporeAirlinesApp" ng-controller="mainCtrl" ng-init="show_map = false; show_stream = false">
+	<div id="container" ng-class="{plainBg: show_map || show_stream, illustratedBg: !show_map || !show_stream}">
+	<div ng-show="show_stream === true && show_map === false" id="stream">
 		<div class="fb-video"
 		  data-href="https://www.facebook.com/mytvcambodia/videos/10153746016660703/"
 		  data-width="712"
@@ -22,7 +22,7 @@
 		  data-autoplay="true">
 	  </div>
 	</div>
-	<div id="map" ng-show="show_map"></div>
+	<div id="map" ng-show="show_map === true && show_stream === false"></div>
 	<homepage></homepage>
 	</div>
 	<div id="fb-root"></div>

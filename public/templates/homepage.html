@@ -1,10 +1,9 @@
 <div class="header" id="wttw-header">Wellington To The World!</div>
-
-<!-- <div id="sa-logo"></div> -->
+<div id="join-us" ng-hide="show_map || show_stream">Join us,<br> as we celebrate the arrival of Singapore Airlines' inaugural flight from Singapore into Wellington.</div>
 <div id="wa-logo"></div>
 <div id="buttons_wrapper">
-	<div class="button" id="tracker-button" ng-click="show_map = !show_map; refreshMap();">Follow the plane here</div>
-	<div class=icon id="plane-icon" ng-click="show_map = !show_map"></div>
-	<div class="button" id="livestream-button" ng-click="show_stream = !show_stream">Watch the livesream here</div>
-	<div class=icon id="play-icon" ng-click="show_stream = !show_stream"></div>
+	<div class="button" id="tracker-button" ng-click="show_map = true; show_stream=false; refreshMap();">Follow the plane here</div>
+	<div class=icon id="plane-icon" ng-click="show_map = true; show_stream=false; refreshMap()"></div>
+	<div class="button" id="livestream-button" ng-click="show_stream = true; show_map=false">Watch the livesream here</div>
+	<div class=icon id="play-icon" ng-click="show_stream = true; show_map=false"></div>
 </div>
