@@ -14,6 +14,7 @@
 </head>
 <body ng-app="singaporeAirlinesApp" ng-controller="mainCtrl" ng-init="show_map = false; show_stream = false">
 	<div id="container" ng-class="{plainBg: show_map || show_stream, illustratedBg: !show_map || !show_stream}">
+	<div class="close" ng-show="show_map || show_stream" ng-click="show_map = false; show_stream = false">X</div>
 	<div ng-show="show_stream === true && show_map === false" id="stream">
 		<div class="fb-video"
 		  data-href="https://www.facebook.com/mytvcambodia/videos/10153746016660703/"

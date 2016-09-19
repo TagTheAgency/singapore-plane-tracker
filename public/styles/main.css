@@ -31,6 +31,17 @@ html, body{
     src: url('../fonts/BakerSignet.ttf');
 }
 
+.close {
+	border-radius: 40%;
+	background-color: rgba(232,178,41,0.7);
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	font-size: 30px;margin: 180px 60px 0 0;
+	z-index: 1;
+	cursor: pointer;
+}
+
 #buttons_wrapper {
 	bottom: 0%;
 	position: absolute;
@@ -39,7 +50,13 @@ html, body{
 	height: 200px;
 }
 
+.button:hover {
+	color: rgb(232,178,41);
+	background-color: black !important;
+}
+
 #buttons_wrapper .button {
+	cursor: pointer;
 	margin-top: 20px;
 	font-size: 25px;
 	height: 60px;
@@ -52,6 +69,7 @@ html, body{
 }
 
 #buttons_wrapper .icon {
+	cursor: pointer;
 	float: left;
 	height: 60px;
 	width: 60px;
@@ -106,7 +124,7 @@ html, body{
 	border: 20px solid rgba(249, 157, 28, 0.4);
 	width: 80%;
 	height: 60%;
-	top: 50%;
+	top: 530px;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
@@ -118,7 +136,7 @@ html, body{
 	/*border: 20px solid rgba(249, 157, 28, 0.4);*/
 	width: 80%;
 	height: 62%;
-	top: 50%;
+	top: 530px;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
