@@ -3,8 +3,8 @@
 <!-- <div id="sa-logo"></div> -->
 <div id="wa-logo"></div>
 <div id="buttons_wrapper">
-	<div class="button" id="tracker-button" ng-click="show_map = true">Follow the plane here</div>
-	<div class=icon id="plane-icon"></div>
-	<div class="button" id="livestream-button">Watch the livesream here</div>
-	<div class=icon id="play-icon"></div>
+	<div class="button" id="tracker-button" ng-click="show_map = !show_map; refreshMap();">Follow the plane here</div>
+	<div class=icon id="plane-icon" ng-click="show_map = !show_map"></div>
+	<div class="button" id="livestream-button" ng-click="show_stream = !show_stream">Watch the livesream here</div>
+	<div class=icon id="play-icon" ng-click="show_stream = !show_stream"></div>
 </div>

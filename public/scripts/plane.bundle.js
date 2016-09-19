@@ -40,6 +40,13 @@ webpackJsonp([0],[
 			}
 			console.log(coords)
 		} 
+
+		$scope.refreshMap = function () {
+			setTimeout(function(){ 
+				google.maps.event.trigger(map, 'resize')
+				map.setCenter(new google.maps.LatLng(-20, 140)); }, 1000);
+			
+		}
 	})
 
 /***/ },
