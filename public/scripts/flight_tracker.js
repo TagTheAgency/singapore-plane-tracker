@@ -1,5 +1,5 @@
 
-var fxml_url = 'http://iraritchiemeek:b66b5f80cd578cb1318c9e1c5748338e8a24b370@flightxml.flightaware.com/json/FlightXML2/';
+var fxml_url = 'https://iraritchiemeek:b66b5f80cd578cb1318c9e1c5748338e8a24b370@flightxml.flightaware.com/json/FlightXML2/';
 google.load("visualization", "1", {packages:["map"]});
 // data: { 'ident': 'ANZ281', 'departureTime': '1473901980' },
 $(document).ready(function() {
