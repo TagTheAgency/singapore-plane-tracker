@@ -47,7 +47,7 @@ $(document).ready(function() {
       });
     }
 
-    setInterval(function(){getFlightUpdate()}, 120000);
+    setInterval(function(){getFlightUpdate()}, 40000);
 
     function plotCoords2(coords) {
       flightPath = new google.maps.Polyline({
