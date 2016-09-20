@@ -25,8 +25,9 @@ $(document).ready(function() {
       $.ajax({
           type: 'GET',
           url: fxml_url + 'GetLastTrack',
-          data: { 'ident': 'SQ291'},
+          data: { 'ident': 'SIA291'},
           success : function(response) {
+            console.log(response)
             for (var i = response.GetLastTrackResult.data.length - 1; i >= 0; i--) {
               var flight_update = response.GetLastTrackResult.data[i]
               coords.push({lat: flight_update.latitude, lng: flight_update.longitude})
