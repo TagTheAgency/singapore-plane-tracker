@@ -5,6 +5,4 @@ var angular = require('angular')
 angular.module('singaporeAirlinesApp', []);
 
 require('./scripts/controllers/main.js')
-require('./scripts/services/data.js')
 require('./scripts/directives/homepage.js')
-require('./scripts/directives/map.js')
