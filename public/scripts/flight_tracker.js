@@ -6,69 +6,69 @@ $(document).ready(function() {
 
     // $(document).on('click', '#tracker-button, #plane-icon', function() {
 
-    var coords = []
-    var count = 0
-    var flightPath
-    var pathLength
-    var marker
-    getFlightUpdate()
-    var image = {
-        url: '../imgs/rotated-white.png',
-        scaledSize: new google.maps.Size(30, 30),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(10, 10),
-        rotation: 90
-      };
+    // var coords = []
+    // var count = 0
+    // var flightPath
+    // var pathLength
+    // var marker
+    // getFlightUpdate()
+    // var image = {
+    //     url: '../imgs/rotated-white.png',
+    //     scaledSize: new google.maps.Size(30, 30),
+    //     origin: new google.maps.Point(0, 0),
+    //     anchor: new google.maps.Point(10, 10),
+    //     rotation: 90
+    //   };
 
-    function getFlightUpdate() {
-      coords = []
-      $.ajax({
-          type: 'GET',
-          url: fxml_url + 'GetLastTrack',
-          data: { 'ident': 'SIA291'},
-          success : function(response) {
-            console.log(response)
-            for (var i = response.GetLastTrackResult.data.length - 1; i >= 0; i--) {
-              var flight_update = response.GetLastTrackResult.data[i]
-              coords.push({lat: flight_update.latitude, lng: flight_update.longitude})
-            }
-            if(flightPath !== undefined) {
-              flightPath.setMap(null);
-              flightPath = null
-              marker.setMap(null);
-            }
-            plotCoords2(coords)
-            addMarker(coords)
-          },
-          error: function(data, text) { console.log('Failed to fetch flight: ' + data); },
-          dataType: 'jsonp',
-          jsonp: 'jsonp_callback',
-          xhrFields: { withCredentials: true }
-      });
-    }
+    // function getFlightUpdate() {
+    //   coords = []
+    //   $.ajax({
+    //       type: 'GET',
+    //       url: fxml_url + 'GetLastTrack',
+    //       data: { 'ident': 'SQ292'},
+    //       success : function(response) {
+    //         console.log(response)
+    //         for (var i = response.GetLastTrackResult.data.length - 1; i >= 0; i--) {
+    //           var flight_update = response.GetLastTrackResult.data[i]
+    //           coords.push({lat: flight_update.latitude, lng: flight_update.longitude})
+    //         }
+    //         if(flightPath !== undefined) {
+    //           flightPath.setMap(null);
+    //           flightPath = null
+    //           marker.setMap(null);
+    //         }
+    //         plotCoords2(coords)
+    //         addMarker(coords)
+    //       },
+    //       error: function(data, text) { console.log('Failed to fetch flight: ' + data); },
+    //       dataType: 'jsonp',
+    //       jsonp: 'jsonp_callback',
+    //       xhrFields: { withCredentials: true }
+    //   });
+    // }
 
-    setInterval(function(){getFlightUpdate()}, 40000);
+    // setInterval(function(){getFlightUpdate()}, 40000);
 
-    function plotCoords2(coords) {
-      flightPath = new google.maps.Polyline({
-          path: coords,
-          geodesic: true,
-          strokeColor: '#FFF',
-          strokeOpacity: 0.8,
-          strokeWeight: 3
-        });
-        flightPath.setMap(map);
-    }
+    // function plotCoords2(coords) {
+    //   flightPath = new google.maps.Polyline({
+    //       path: coords,
+    //       geodesic: true,
+    //       strokeColor: '#FFF',
+    //       strokeOpacity: 0.8,
+    //       strokeWeight: 3
+    //     });
+    //     flightPath.setMap(map);
+    // }
 
-    function addMarker(coords) {
-      var lastCoords = coords[0]
-      var position = new google.maps.LatLng(lastCoords.lat, lastCoords.lng)
-      marker = new google.maps.Marker({
-                  position: position,
-                  icon: image,
-                  map: map
-      });
-    }
+    // function addMarker(coords) {
+    //   var lastCoords = coords[0]
+    //   var position = new google.maps.LatLng(lastCoords.lat, lastCoords.lng)
+    //   marker = new google.maps.Marker({
+    //               position: position,
+    //               icon: image,
+    //               map: map
+    //   });
+    // }
 
   // });
 });
